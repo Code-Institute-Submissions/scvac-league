@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches</title>
+</head>
+<body>
+    {% for match in matches %}
+        <h1>Match {{ match.match_number }}</h1>
+        <h2>{{ match.match_date }}</h2>
+        <h2>{{ match.match_venue }}</h2>
+        <h3>{{ match.venue_address }} {{ match.venue_postcode }}</h3>
+        <p>{{ match.venue_latitude }}, {{ match.venue_longitude }}</p>
+    {% endfor %}
+</body>
+</html>
