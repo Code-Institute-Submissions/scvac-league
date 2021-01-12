@@ -137,3 +137,37 @@ main {
         width: 90vw;
     }
 }
+
+main h1 {
+    text-align: center;
+}
+
+/* Registration form */
+
+form div {
+    width: 50%;
+    float: left;
+    margin-bottom: 2.5vw;
+}
+
+label {
+    font-size: 2vw;
+}
+
+input, select {
+    font-size: 2.5vw;
+    width: 30vw;
+    border: 0.1vw solid rgb(0,0,0);
+    padding: 0.5vw;
+}
+
+.check input, .check label {
+    font-size: 2.5vw;
+}
+
+.check input {
+    height: 1.5vw;
+    width: 1.5vw;
+}
+
+    

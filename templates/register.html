@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Registration Form</h1><br>
+    <form method="POST" action="{{ url_for('register') }}">
+        <div>
+            <label for="forname">Forname:</label><br>
+            <input type="text" id="forname" name="forname">
+        </div>
+        <div>
+            <label for="surname">Surname:</label><br>
+            <input type="text" id="surname" name="surname">
+        </div>
+        <div>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" class="validate">
+        </div>
+        <div>
+            <label for="password">Password:</label><br>
+            <input type="text" id="password" name="password" class="validate">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="mobile">Mobile phone number:</label>
+            <input type="tel" id="mobile" name="mobile">
+        </div>
+
+        <label>Role:</label><br>
+        <div class="check">
+            <label for="athlete">Athlete&nbsp;</label>
+            <input type="checkbox" id="athlete" name="athlete" value="basic">
+            <label for="manager">&emsp;&emsp;Manager&nbsp;</label>
+            <input type="checkbox" id="manager" name="manager" value="basic">
+        </div>
+        <div class="check">
+            <label for="official">Official&nbsp;</label>
+            <input type="checkbox" id="official" name="official" value="advanced">
+            <label for="administrator">&emsp;&emsp;Administrator&nbsp;</label>
+            <input type="checkbox" id="administrator" name="administrator" value="advanced">
+        </div>
+        <div>
+            <label for="club">Club:</label><br>
+            <select id="club" name="club">
+                <option value="select">Please select your club</option>
+                <option value="abingdon">Abingdon AC</option>
+                <option value="newbury">Newbury AC</option>
+                <option value="oxford">Oxford City AC</option>
+                <option value="radley">Radley AC</option>
+                <option value="readingac">Reading AC</option>
+                <option value="readingrr">Reading Roadrunners</option>
+                <option value="swindon">Swindon Harriers AC</option>
+                <option value="whitehorse">White Horse Harriers AC</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div>
+            <label for="otherclub">Other club:</label><br>
+            <input type="text" id="otherclub" name="otherclub" value="If other, please specify">
+        </div>
+        <div class="register">
+            <input type="submit" value="Register">
+        </div> 
+    </form>
+    
+
+{% endblock %}
