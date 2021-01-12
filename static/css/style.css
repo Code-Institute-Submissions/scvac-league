@@ -1,4 +1,139 @@
-body {
-    background-color: green;
-    color: yellow;
+/* Roboto and Roboto Condensed font families */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+/* Header */
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20vw;
+    width: 20vw;
+}
+
+#title {
+    position: absolute;
+    left: 20vw;
+    height: 20vw;
+    width: 80vw;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 4vw;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(35,155,35);
+    z-index: 2;
+
+}
+
+@media screen and (max-width: 600px) {
+    #title {
+        width: 60vw;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
+}
+
+/* Navigation menu */
+
+.menu {
+    position: absolute;
+    top: 25vw;
+    left: 0;
+    width: 20vw;
+    z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        top: 0vw;
+        left: 40vw;
+        width: 60vw;
+    }
+}
+
+/* Hide the links inside the mobile navigation menu */
+@media screen and (max-width: 600px) {
+    .menu #links {
+        display: none;
+    }
+}
+
+/* Navigation menu links */
+
+.menu a {
+    display: block;
+    height: 4vw;
+    text-decoration: none;
+    text-align: center;
+    font-size: 3vw;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: rgb(255, 235, 0);
+    background-color: rgb(35,155,35);
+    border-style: solid;
+    border-color: rgb(0,0,0);
+    border-width: 0.5vw 0.5vw 0 0.5vw;
+}
+
+@media screen and (max-width: 600px) {
+    .menu a {
+        height: 8vw;
+        font-size: 6vw;
+    }
+}
+
+#links a:last-child {
+    border-bottom-width: 0.5vw;
+}
+
+/* Hamburger icon */
+.menu a.icon {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .menu a.icon {
+        display: block;
+        height: 20vw;
+        font-size: 16vw;
+        text-align: right;
+        color: rgb(35,155,35);
+        background-color: rgb(255,255,255);
+        border: none;
+    }
+}
+
+/* Hover indicator */
+.menu a:hover {
+    color: rgb(0,0,0);
+}
+
+/* Active link indicator */
+.menu a.active {
+    color: rgb(255,255,255);
+}
+
+/* Main page content */
+
+main {
+    position: absolute;
+    top: 25vw;
+    left: 25vw;
+    width: 70vw;
+    font-size: 2vw;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0,0,0);
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        left: 5vw;
+        width: 90vw;
+    }
 }

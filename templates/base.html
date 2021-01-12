@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/96276fa2dd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
@@ -13,20 +14,34 @@
 <body>
     <header>
         <a href="http://www.scvac.org.uk/" target="_blank">
-            <img src="" alt="SCVAC logo">
+            <img src="static/img/logo_placeholder.png" alt="SCVAC logo" id="logo">
         </a>
-        <h1 id="title">SCVAC League Western Division</h1>
+        <div id="title">
+            <h1>SCVAC League Western Division</h1>
+        </div>
     </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="matches.html">Matches</a>
-        <a href="declarations.html">Declarations</a>
-        <a href="results.html">Results</a>
-        <a href="rankings.html">Rankings</a>
-        <a href="gallery.html">Gallery</a>
+    <nav class="menu">
+        <!-- Hamburger icon to toggle the mobile navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="reveal()">
+            <i class="fas fa-bars"></i>
+        </a>
+        <!-- Navigation links hidden by default for mobile -->
+        <div id="links">
+            <a href="#home" class="active">Home</a>
+            <a href="#matches">Matches</a>
+            <a href="#declarations">Declarations</a>
+            <a href="#results">Results</a>
+            <a href="#rankings">Rankings</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#register">Registration</a>
+            <a href="#login">Login</a>
+        </div>
     </nav>
-    {% block content %}
-    {% endblock %}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    
     <footer>
 
     </footer>
