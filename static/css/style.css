@@ -170,6 +170,21 @@ input, select {
     width: 1.5vw;
 }
 
+.register input, .login input {
+    position: absolute;
+    left: 20vw;
+    width: 25vw;
+    z-index: 10;
+}
+
+.register input {
+    top: 60vw;
+}
+
+.login input {
+    top: 30vw;
+}
+
 .flash {
     position: absolute;
     top: 20vw;
