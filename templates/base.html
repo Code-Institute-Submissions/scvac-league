@@ -38,6 +38,7 @@
             <a href="gallery.html">Gallery</a>
             <a href="{{ url_for('register') }}">Register</a>
             <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
         </div>
     </nav>
 
