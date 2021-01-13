@@ -170,4 +170,18 @@ input, select {
     width: 1.5vw;
 }
 
+.flash {
+    position: absolute;
+    top: 20vw;
+    width: 100vw;
+    text-align: center;
+    background-color: rgb(0,0,0);
+    z-index: 5;
+}
+
+.flash p {
+    font-size: 3vw;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255,235,0);
+}
     
