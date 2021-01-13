@@ -114,11 +114,6 @@
     color: rgb(0,0,0);
 }
 
-/* Active link indicator */
-.menu a.active {
-    color: rgb(255,255,255);
-}
-
 /* Main page content */
 
 main {
@@ -144,22 +139,27 @@ main h1 {
 
 /* Registration form */
 
+/* Form layout */
 form div {
     width: 50%;
     float: left;
     margin-bottom: 2.5vw;
 }
 
-label {
+/* Box labels */
+label, form div .smalllabel {
     font-size: 2vw;
 }
 
-input, select {
+/* Input boxes */
+input {
     font-size: 2.5vw;
     width: 30vw;
     border: 0.1vw solid rgb(0,0,0);
     padding: 0.5vw;
 }
+
+/* Checkboxes */
 
 .check input, .check label {
     font-size: 2.5vw;
@@ -170,7 +170,9 @@ input, select {
     width: 1.5vw;
 }
 
-.register input, .login input {
+/* Submit buttons */
+
+.register input, .login input, .submit input {
     position: absolute;
     left: 20vw;
     width: 25vw;
@@ -184,6 +186,12 @@ input, select {
 .login input {
     top: 30vw;
 }
+
+.submit input {
+    top: 40vw;
+}
+
+/* Flash messages */
 
 .flash {
     position: absolute;

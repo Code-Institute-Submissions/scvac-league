@@ -25,45 +25,33 @@
             <input type="password" id="password" name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
         </div>
         <div>
-            <label for="email">Email:</label>
+            <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
         </div>
         <div>
-            <label for="mobile">Mobile phone number:</label>
+            <label for="mobile">Mobile phone number:</label><br>
             <input type="tel" id="mobile" name="mobile" pattern="^[0-9]{11}$">
-        </div>
-
-        <label>Role:</label><br>
-        <div class="check">
-            <label for="athlete">Athlete&nbsp;</label>
-            <input type="checkbox" id="athlete" name="athlete" value="basic">
-            <label for="manager">&emsp;&emsp;Manager&nbsp;</label>
-            <input type="checkbox" id="manager" name="manager" value="basic">
-        </div>
-        <div class="check">
-            <label for="official">Official&nbsp;</label>
-            <input type="checkbox" id="official" name="official" value="advanced">
-            <label for="administrator">&emsp;&emsp;Administrator&nbsp;</label>
-            <input type="checkbox" id="administrator" name="administrator" value="advanced">
         </div>
         <div>
             <label for="club">Club:</label><br>
-            <select id="club" name="club">
-                <option value="select">Please select your club</option>
-                <option value="abingdon">Abingdon AC</option>
-                <option value="newbury">Newbury AC</option>
-                <option value="oxford">Oxford City AC</option>
-                <option value="radley">Radley AC</option>
-                <option value="readingac">Reading AC</option>
-                <option value="readingrr">Reading Roadrunners</option>
-                <option value="swindon">Swindon Harriers AC</option>
-                <option value="whitehorse">White Horse Harriers AC</option>
-                <option value="other">Other</option>
-            </select>
+            <input list="clubs" name="club" id="club" required>
+            <datalist id="clubs">
+                <option value="Abingdon AC">
+                <option value="Newbury AC">
+                <option value="Oxford City AC">
+                <option value="Radley AC">
+                <option value="Reading AC">
+                <option value="Reading Roadrunners">
+                <option value="Swindon Harriers">
+                <option value="White Horse Harriers AC">
+            </datalist>
         </div>
-        <div>
-            <label for="otherclub">Other club:</label><br>
-            <input type="text" id="otherclub" name="otherclub" value="If other, please specify">
+        <label>Roles:</label><br>
+        <div class="check">
+            <label for="team">Athlete, Coach or Manager&nbsp;</label>
+            <input type="checkbox" id="team" name="team" value="basic">
+            <label for="official">Official or Administrator&nbsp;</label>
+            <input type="checkbox" id="official" name="official" value="advanced">
         </div>
         <div class="register">
             <input type="submit" value="Register">

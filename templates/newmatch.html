@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>New Match</h1><br>
+
+    <form method="POST" action="{{ url_for('newmatch') }}">
+        
+        <div class="check">
+            <label class="smalllabel">Match number:</label><br>
+            <input type="radio" id="one" name="match_number" value="1">
+            <label for="one">&nbsp;1&emsp;</label>
+            <input type="radio" id="two" name="match_number" value="2">
+            <label for="two">&nbsp;2&emsp;</label>
+            <input type="radio" id="three" name="match_number" value="3">
+            <label for="three">&nbsp;3&emsp;</label>
+            <input type="radio" id="four" name="match_number" value="4">
+            <label for="four">&nbsp;4</label>
+        </div>
+        
+        <div>
+            <label for="date">Match date:</label><br>
+            <input type="date" id="date" name="match_date">
+        </div>
+        <div>
+            <label for="venue">Venue:</label><br>
+            <input list="venues" id="venue" name="match_venue" >
+            <datalist id="venues">
+                <option value="Crookham Common Athletics Track">
+                <option value="Horspath Athletics and Sports Ground">
+                <option value="John Nike Athletics Stadium">
+                <option value="Palmer Park Stadium">
+                <option value="Swindon Athletics Track">
+                <option value="Tilsley Park">
+            </datalist>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Submit">
+        </div> 
+    </form>
+
+{% endblock %}

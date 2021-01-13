@@ -22,13 +22,6 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
-@app.route("/")
-@app.route("/matches")
-def matches():
-    matches = mongo.db.matches.find()
-    return render_template("matches.html", matches=matches)
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -102,6 +95,28 @@ def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+@app.route("/")
+@app.route("/matches")
+def matches():
+    matches = mongo.db.matches.find()
+    return render_template("matches.html", matches=matches)
+
+
+@app.route("/newmatch", methods=["GET", "POST"])
+def newmatch():
+    if request.method == "POST":
+        
+        newmatch = {
+            "match_number": request.form.get("match_number"),
+            "match_date": request.form.get("match_date"),
+            "match_venue": request.form.get("match_venue").lower(),
+        }   
+
+        mongo.db.matches.insert_one(newmatch)
+
+    return render_template("newmatch.html")
 
 
 if __name__ == "__main__":

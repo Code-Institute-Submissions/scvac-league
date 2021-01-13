@@ -29,10 +29,10 @@
         </a>
         <!-- Navigation links hidden by default for mobile -->
         <div id="links">
-            <a href="home.html" class="active">Home</a>
+            <a href="home.html">Home</a>
             <a href="{{ url_for('matches') }}">Matches</a>
             {% if session.user %}
-                <a href="newmatch.html">Create Match</a>
+                <a href="{{ url_for('newmatch') }}">Create Match</a>
             {% endif %}
             <a href="teams.html">Teams</a>
             {% if session.user %}
