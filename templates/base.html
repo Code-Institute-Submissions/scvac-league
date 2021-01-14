@@ -29,7 +29,7 @@
         </a>
         <!-- Navigation links hidden by default for mobile -->
         <div id="links">
-            <a href="home.html">Home</a>
+            <a href="{{ url_for('clubs') }}">Home</a>
             <a href="{{ url_for('matches') }}">Matches</a>
             {% if session.user %}
                 <a href="{{ url_for('newmatch') }}">Create Match</a>

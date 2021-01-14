@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1>Welcome to the Vets League website!</h1><br>
+
+    <section id="clubs">
+        <p>The Western Division features four matches each year between the following athletic clubs:</p>
+        <ul>
+            {% for club in clubs %}
+                <li>{{ club.club_number }}&emsp;<a href="{{ club.club_website }}">{{ club.club_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </section> 
+
+{% endblock %}

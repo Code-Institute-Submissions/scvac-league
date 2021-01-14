@@ -1,9 +1,7 @@
 import os
 from flask import (
-    Flask, flash,
-    render_template, redirect, request,
-    session, url_for
-)
+    Flask, flash, render_template,
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -20,6 +18,13 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 
 mongo = PyMongo(app)
+
+
+@app.route("/")
+@app.route("/clubs")
+def clubs():
+    clubs = mongo.db.clubs.find({"club_status" : "active"}).sort("club_name")
+    return render_template("clubs.html", clubs=clubs)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -83,10 +88,10 @@ def login():
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    
+
     if session["user"]:
         return render_template("profile.html", username=username)
-    
+
     return redirect(url_for("login"))
 
 
@@ -97,7 +102,6 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/")
 @app.route("/matches")
 def matches():
     matches = mongo.db.matches.find()
@@ -107,15 +111,14 @@ def matches():
 @app.route("/newmatch", methods=["GET", "POST"])
 def newmatch():
     if request.method == "POST":
-        
-        newmatch = {
+        match = {
             "match_number": request.form.get("match_number"),
             "match_date": request.form.get("match_date"),
             "match_venue": request.form.get("match_venue").lower(),
-        }   
-
-        mongo.db.matches.insert_one(newmatch)
-
+        }
+        mongo.db.matches.insert_one(match)
+        flash("New match successfully added")
+        
     return render_template("newmatch.html")
 
 

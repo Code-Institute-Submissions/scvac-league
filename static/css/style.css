@@ -137,6 +137,20 @@ main h1 {
     text-align: center;
 }
 
+#clubs ul {
+    text-transform: capitalize;
+    margin-left: 5vw;
+    list-style-type: none;
+}
+
+#clubs ul li {
+    margin: 1vw;
+}
+
+#clubs a {
+    text-decoration: none;
+}
+
 /* Registration form */
 
 /* Form layout */
