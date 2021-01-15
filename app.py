@@ -38,21 +38,15 @@ def register():
             return redirect(url_for("register"))
 
         register = {
-            "forname": request.form.get("forname").lower(),
-            "surname": request.form.get("surname").lower(),
-            "username": request.form.get("username").lower(),
+            "username": request.form.get("username"),
             "password": generate_password_hash(request.form.get("password")),
-            "email": request.form.get("email"),
-            "mobile": request.form.get("mobile"),
-            "athlete": request.form.get("athlete"),
-            "manager": request.form.get("manager"),
+            "team": request.form.get("team"),
             "official": request.form.get("official"),
-            "administrator": request.form.get("administrator"),
             "club": request.form.get("club").lower(),
         }
         mongo.db.users.insert_one(register)
 
-        session["user"] = request.form.get("username").lower()
+        session["user"] = request.form.get("username")
         flash("Registration successful!")
         return redirect(url_for("profile", username=session["user"]))
 
@@ -63,12 +57,12 @@ def register():
 def login():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
+            {"username": request.form.get("username")})
 
         if existing_user:
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
+                    session["user"] = request.form.get("username")
                     flash("Welcome back {}".format(
                         request.form.get("username")))
                     return redirect(url_for(

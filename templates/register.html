@@ -9,14 +9,6 @@
 
     <form method="POST" action="{{ url_for('register') }}">
         <div>
-            <label for="forname">Forname:</label><br>
-            <input type="text" id="forname" name="forname">
-        </div>
-        <div>
-            <label for="surname">Surname:</label><br>
-            <input type="text" id="surname" name="surname">
-        </div>
-        <div>
             <label for="username">Username:</label><br>
             <input type="text" id="username" name="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
         </div>
@@ -25,33 +17,20 @@
             <input type="password" id="password" name="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
         </div>
         <div>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-        </div>
-        <div>
-            <label for="mobile">Mobile phone number:</label><br>
-            <input type="tel" id="mobile" name="mobile" pattern="^[0-9]{11}$">
-        </div>
-        <div>
             <label for="club">Club:</label><br>
             <input list="clubs" name="club" id="club" required>
             <datalist id="clubs">
-                <option value="Abingdon AC">
-                <option value="Newbury AC">
-                <option value="Oxford City AC">
-                <option value="Radley AC">
-                <option value="Reading AC">
-                <option value="Reading Roadrunners">
-                <option value="Swindon Harriers">
-                <option value="White Horse Harriers AC">
+                {% for club in clubs %}
+                    <option value="{{ club.club_name }}">
+                {% endfor %}
             </datalist>
         </div>
         <label>Roles:</label><br>
         <div class="check">
             <label for="team">Athlete, Coach or Manager&nbsp;</label>
-            <input type="checkbox" id="team" name="team" value="basic">
+            <input type="checkbox" id="team" name="team" value="team">
             <label for="official">Official or Administrator&nbsp;</label>
-            <input type="checkbox" id="official" name="official" value="advanced">
+            <input type="checkbox" id="official" name="official" value="official">
         </div>
         <div class="register">
             <input type="submit" value="Register">
