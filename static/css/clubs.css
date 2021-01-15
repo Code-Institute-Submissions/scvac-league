@@ -1,0 +1,12 @@
+#clubs ul {
+    margin-left: 5vw;
+    list-style-type: none;
+}
+
+#clubs ul li {
+    margin: 1vw;
+}
+
+#clubs a {
+    text-decoration: none;
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/96276fa2dd.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
     <title>SCVAC League</title>
@@ -32,7 +32,7 @@
             <a href="{{ url_for('clubs') }}">Home</a>
             <a href="{{ url_for('matches') }}">Matches</a>
             {% if session.user %}
-                <a href="{{ url_for('newmatch') }}">Create Match</a>
+                <a href="{{ url_for('add_match') }}">Add Match</a>
             {% endif %}
             <a href="teams.html">Teams</a>
             {% if session.user %}

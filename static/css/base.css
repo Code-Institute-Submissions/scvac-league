@@ -130,6 +130,7 @@ main {
     main {
         left: 5vw;
         width: 90vw;
+        font-size: 3vw;
     }
 }
 
@@ -137,85 +138,6 @@ main h1 {
     text-align: center;
 }
 
-/* Home page */
-
-#clubs ul {
-    text-transform: capitalize;
-    margin-left: 5vw;
-    list-style-type: none;
-}
-
-#clubs ul li {
-    margin: 1vw;
-}
-
-#clubs a {
-    text-decoration: none;
-}
-
-/* Matches */
-
-section {
-    text-transform: capitalize;
-}
-
-span {
-    text-transform: uppercase;
-}
-
-/* Registration form */
-
-/* Form layout */
-form div {
-    width: 50%;
-    float: left;
-    margin-bottom: 2.5vw;
-}
-
-/* Box labels */
-label, form div .smalllabel {
-    font-size: 2vw;
-}
-
-/* Input boxes */
-input {
-    font-size: 2.5vw;
-    width: 30vw;
-    border: 0.1vw solid rgb(0,0,0);
-    padding: 0.5vw;
-}
-
-/* Checkboxes */
-
-.check input, .check label {
-    font-size: 2.5vw;
-}
-
-.check input {
-    height: 1.5vw;
-    width: 1.5vw;
-}
-
-/* Submit buttons */
-
-.register input, .login input, .submit input {
-    position: absolute;
-    left: 20vw;
-    width: 25vw;
-    z-index: 10;
-}
-
-.register input {
-    top: 60vw;
-}
-
-.login input {
-    top: 30vw;
-}
-
-.submit input {
-    top: 40vw;
-}
 
 /* Flash messages */
 
@@ -234,49 +156,7 @@ input {
     color: rgb(255,235,0);
 }
 
-/* Accordion */
 
-.accordionItem {
-    display: block;
-    margin: auto;
-}
-
-.accordionItemHeading {
-    cursor: pointer;
-    margin: auto;
-}
-
-.close .accordionItemContent {
-    height: 0;
-    -webkit-transition: height 1s ease-out;
-    -o-transition: height 1s ease-out;
-    transition: height 1s ease-out;
-    -webkit-transform: scaleY(0);
-    -o-transform: scaleY(0);
-    -ms-transform: scaleY(0);
-    transform: scaleY(0);
-    display: block;
-}
-
-.open .accordionItemContent {
-    display: block;
-    -webkit-transform: scaleY(1);
-    -o-transform: scaleY(1);
-    -ms-transform: scaleY(1);
-    transform: scaleY(1);
-    -webkit-transform-origin: top;
-    -o-transform-origin: top;
-    -ms-transform-origin: top;
-    transform-origin: top;
-    -webkit-transition: -webkit-transform 1s ease-out;
-    -o-transition: -o-transform 1s ease;
-    -ms-transition: -ms-transform 1s ease;
-    -webkit-transition: -webkit-transform 1s ease;
-    transition: -webkit-transform 1s ease;
-    -o-transition: transform 1s ease;
-    transition: transform 1s ease;
-    transition: transform 1s ease, -webkit-transform 1s ease;
-}
 
 
     

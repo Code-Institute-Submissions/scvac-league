@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accordion.css') }}" type="text/css">
 
     {% for match in matches %}
         <section class="accordionItem close">
@@ -7,7 +8,7 @@
             <div class="accordionItemContent">
                 <h2>{{ match.match_date }}</h2>
                 <h2>{{ match.match_venue }}</h2>
-                <h3>{{ match.venue_address }} <span>{{ match.venue_postcode }}</span></h3>
+                <h3>{{ match.venue_address }} {{ match.venue_postcode }}</h3>
                 <p>{{ match.venue_latitude }}, {{ match.venue_longitude }}</p>
             </div>
         </section>

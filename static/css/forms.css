@@ -1,0 +1,73 @@
+/* Form layout */
+
+form div {
+    width: 50%;
+    float: left;
+    margin-bottom: 2.5vw;
+}
+
+/* Input boxes */
+
+select, input {
+    font-size: 2.5vw;
+    width: 30vw;
+    border: 0.25vw solid rgb(0,0,0);
+}
+
+@media screen and (max-width: 600px) {
+    select, input {
+        font-size: 4vw;
+        width: 40vw;
+    }
+}
+
+.check {
+    font-size: 2.5vw;
+    width: 30vw;
+}
+
+@media screen and (max-width: 600px) {
+    .check {
+        font-size: 4vw;
+        width: 40vw;
+    }
+}
+
+.check input {
+    width: 2.5vw;
+}
+
+@media screen and (max-width: 600px) {
+    .check input {
+        width: 3vw;
+    }
+}
+
+.check label {
+    margin-right: 2.5vw;
+}
+
+@media screen and (max-width: 600px) {
+    .check label {
+        margin-right: 3vw;
+    }
+}
+
+
+/* Submit buttons */
+
+.submit input {
+    position: absolute;
+    left: 25vw;
+    width: 20vw;
+    top: 60vw;
+    z-index: 10;
+}
+
+@media screen and (max-width: 600px) {
+    .submit input {
+        left: 30vw;
+        width: 30vw;
+        top: 80vw;
+    } 
+}

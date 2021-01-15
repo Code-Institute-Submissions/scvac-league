@@ -102,18 +102,10 @@ def matches():
     return render_template("matches.html", matches=matches)
 
 
-@app.route("/newmatch", methods=["GET", "POST"])
-def newmatch():
-    if request.method == "POST":
-        match = {
-            "match_number": request.form.get("match_number"),
-            "match_date": request.form.get("match_date"),
-            "match_venue": request.form.get("match_venue").lower(),
-        }
-        mongo.db.matches.insert_one(match)
-        flash("New match successfully added")
-        
-    return render_template("newmatch.html")
+@app.route("/add_match", methods=["GET", "POST"])
+def add_match():
+    match_venues = mongo.db.venues.find().sort("venue_name", 1)
+    return render_template("add_match.html", match_venues=match_venues)
 
 
 if __name__ == "__main__":
