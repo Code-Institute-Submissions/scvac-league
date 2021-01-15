@@ -137,6 +137,8 @@ main h1 {
     text-align: center;
 }
 
+/* Home page */
+
 #clubs ul {
     text-transform: capitalize;
     margin-left: 5vw;
@@ -149,6 +151,16 @@ main h1 {
 
 #clubs a {
     text-decoration: none;
+}
+
+/* Matches */
+
+section {
+    text-transform: capitalize;
+}
+
+span {
+    text-transform: uppercase;
 }
 
 /* Registration form */
@@ -221,4 +233,50 @@ input {
     font-family: 'Roboto', sans-serif;
     color: rgb(255,235,0);
 }
+
+/* Accordion */
+
+.accordionItem {
+    display: block;
+    margin: auto;
+}
+
+.accordionItemHeading {
+    cursor: pointer;
+    margin: auto;
+}
+
+.close .accordionItemContent {
+    height: 0;
+    -webkit-transition: height 1s ease-out;
+    -o-transition: height 1s ease-out;
+    transition: height 1s ease-out;
+    -webkit-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transform: scaleY(0);
+    display: block;
+}
+
+.open .accordionItemContent {
+    display: block;
+    -webkit-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: top;
+    -o-transform-origin: top;
+    -ms-transform-origin: top;
+    transform-origin: top;
+    -webkit-transition: -webkit-transform 1s ease-out;
+    -o-transition: -o-transform 1s ease;
+    -ms-transition: -ms-transform 1s ease;
+    -webkit-transition: -webkit-transform 1s ease;
+    transition: -webkit-transform 1s ease;
+    -o-transition: transform 1s ease;
+    transition: transform 1s ease;
+    transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+
     
