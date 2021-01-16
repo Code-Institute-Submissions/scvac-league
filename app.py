@@ -99,7 +99,7 @@ def logout():
 
 @app.route("/matches")
 def matches():
-    matches = mongo.db.matches.find()
+    matches = mongo.db.matches.find().sort("match_season", -1)
     return render_template("matches.html", matches=matches)
 
 
@@ -155,6 +155,13 @@ def add_match():
 
     match_venues = mongo.db.venues.find().sort("venue_name", 1)
     return render_template("add_match.html", match_venues=match_venues)
+
+
+@app.route("/edit_match/<match_id>", methods=["GET", "POST"])
+def edit_match(task_id):
+    match = mongo.db.matches.find_one({"_id": ObjectId(match_id)})
+    match_venues = mongo.db.venues.find().sort("venue_name", 1)
+    return render_template("edit_match.html", match=match, match_venues=match_venues)
 
 
 if __name__ == "__main__":

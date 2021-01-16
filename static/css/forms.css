@@ -58,16 +58,20 @@ select, input {
 
 .submit input {
     position: absolute;
-    left: 25vw;
+    left: 0;
     width: 20vw;
-    top: 60vw;
-    z-index: 10;
+    margin: 25vw;
+    z-index: 5;
 }
 
 @media screen and (max-width: 600px) {
     .submit input {
-        left: 30vw;
         width: 30vw;
-        top: 80vw;
+        margin: 30vw;
     } 
+}
+
+.edit input {
+    width: 20vw;
+    margin-top: 5vw;
 }
