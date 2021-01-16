@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" type="text/css">
 
     <h1>Registration Form</h1><br>
 
@@ -21,7 +22,7 @@
             <input list="clubs" name="club" id="club" required>
             <datalist id="clubs">
                 {% for club in clubs %}
-                    <option value="{{ club.club_name }}">
+                    <option value="{{ club.club_name }}">{{ club.club_name }}</option>
                 {% endfor %}
             </datalist>
         </div>
