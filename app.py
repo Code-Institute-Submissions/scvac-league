@@ -158,7 +158,7 @@ def add_match():
 
 
 @app.route("/edit_match/<match_id>", methods=["GET", "POST"])
-def edit_match(task_id):
+def edit_match(match_id):
     match = mongo.db.matches.find_one({"_id": ObjectId(match_id)})
     match_venues = mongo.db.venues.find().sort("venue_name", 1)
     return render_template("edit_match.html", match=match, match_venues=match_venues)

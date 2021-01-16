@@ -9,6 +9,7 @@
             <label for="match_season">Season:</label><br>
             <input list="match_seasons" name="match_season">
             <datalist id="match_seasons">
+                {{ match.match_season }}
                 <option value="2012">2012</option>
                 <option value="2013">2013</option>
                 <option value="2014">2014</option>
@@ -37,6 +38,7 @@
         <div class="option">
             <label for="match_weekday">Weekday:</label><br>
             <select list="match_weekdays" id="match_weekday" name="match_weekday">
+                {{ match.match_weekday }}
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>
                 <option value="Wednesday">Wednesday</option>
@@ -49,6 +51,7 @@
         <div class="option">
             <label for="match_date">Day:</label><br>
             <select list="match_dates" id="match_date" name="match_date">
+                {{ match.match_date }}
                 <option value="1st">1st</option>
                 <option value="2nd">2nd</option>
                 <option value="3rd">3rd</option>
@@ -85,6 +88,7 @@
         <div class="option">
             <label for="match_month">Month:</label><br>
             <select list="match_months" id="match_month" name="match_month">
+                {{ match.match_month }}
                 <option value="January">January</option>
                 <option value="February">February</option>
                 <option value="March">March</option>
@@ -104,12 +108,19 @@
             <input list="match_venues" id="match_venue" name="match_venue">
             <datalist id="match_venues">
                 {% for match_venue in match_venues %}
-                    <option value="{{ match_venue.venue_name }}">{{ match_venue.venue_name }}</option>
+                    {% if match_venue.venue_name == match.match_venue %}
+                        <option value="{{ match_venue.venue_name }}" selected>{{ match_venue.venue_name }}</option>
+                    {% else %}
+                        <option value="{{ match_venue.venue_name }}">{{ match_venue.venue_name }}</option>
+                    {% endif %}
                 {% endfor %}
             </datalist>
         </div>
-        <div class="submit">
+        <div class="edit">
             <input type="submit" value="Edit Match">
+            <a href="{{ url_for('matches') }}">
+                <input type="submit" value="Cancel Changes">
+            </a>
         </div> 
     </form>
 
